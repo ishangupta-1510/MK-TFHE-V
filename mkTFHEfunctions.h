@@ -158,6 +158,8 @@ EXPORT void MKlweKeySwitch(MKLweSample* result, const LweKeySwitchKey* ks, const
 // Encrypt and decrypt for gate bootstrap
 /** encrypts a boolean */
 EXPORT void MKbootsSymEncrypt(MKLweSample *result, int32_t message, const MKLweKey* key);
+/** encrypts a boolean backwards */
+EXPORT void MKbootsSymEncrypt_backwards(MKLweSample *result, int32_t message, const MKLweKey* key);
 /** decrypts a boolean */
 EXPORT int32_t MKbootsSymDecrypt(const MKLweSample *sample, const MKLweKey* key);
 

@@ -34,4 +34,6 @@ add_executable(testMK
         tgsw.h
         tgsw_functions.h
         tlwe.h
-        tlwe_functions.h)
+        tlwe_functions.h
+        testMK_sep_keys.cpp
+        testMK_not.cpp)

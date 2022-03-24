@@ -68,10 +68,10 @@ int32_t main(int32_t argc, char **argv) {
     static const double stdevRLWEkey = bk_stdev; // 3.29e-10; // 0; // 0.012467;  // RLWE key standard deviation
     static const double stdevRLWE = bk_stdev; // 3.29e-10; // 0; // 0.012467;     // RLWE ciphertexts standard deviation
     static const double stdevRGSW = bk_stdev; // 3.29e-10;     // RGSW ciphertexts standard deviation 
-    static const int32_t Bgbit = 6;        // Base bit gadget
-    static const int32_t dg = 5;           // dimension gadget
+    static const int32_t Bgbit = 8;        // Base bit gadget
+    static const int32_t dg = 4;           // dimension gadget
     static const double stdevBK = bk_stdev; // 3.29e-10;       // BK standard deviation
-    static const int32_t parties = 10;      // number of parties
+    static const int32_t parties = 4;      // number of parties
 
     // new parameters 
     // 2 parties, B=2^9, d=3 -> works
@@ -160,7 +160,8 @@ int32_t main(int32_t argc, char **argv) {
         MKLweSample *test_in1 = new_MKLweSample(LWEparams, MKparams);
         MKLweSample *test_in2 = new_MKLweSample(LWEparams, MKparams);
         MKbootsSymEncrypt(test_in1, mess1, MKlwekey);
-        MKbootsSymEncrypt(test_in2, mess2, MKlwekey);
+        //MKbootsSymEncrypt(test_in2, mess2, MKlwekey);
+        MKbootsSymEncrypt_backwards(test_in2, mess2, MKlwekey);
         // generate output sample
         MKLweSample *test_out_v2m2 = new_MKLweSample(LWEparams, MKparams);
 
